@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Test Page
+        </title>
+    </head>
+    <body>
+        <h1>Second Example</h1>
+        <div id="demo">
+            No Suggestion
+        </div>
+        <form >
+            First name : <input type="text"  onkeyup="domytask()">
+        </form>       
+       
+        <script>
+            function domytask(){
+                // 1 send thr request to the server : XMLHttpRequest
+                const xhttp =  new XMLHttpRequest();
+                xhttp.onload = function(){
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+                xhttp.open("GET", "getNames.php");
+                xhttp.send();
+                // 2 get the response from the server
+                // 3 do some changes in web page on the data whhich is recieved from server
+                
+            }
+        </script>   
+    </body>
+</html>
+
+
+<!--
+script is writen in javascript
+
+-->
